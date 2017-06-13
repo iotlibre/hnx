@@ -176,7 +176,7 @@ $(document).ready(function(){
 	ajuste();
 	
 	// Pantalla completa.
-	$('#arboles').on('click',function(){
+	$('#cantidad').on('click',function(){
 		var pantalla=document.body;
 		
 		var request_full_screen=pantalla.requestFullScreen || pantalla.webkitRequestFullScreen || pantalla.mozRequestFullScreen || pantalla.msRequestFullScreen;

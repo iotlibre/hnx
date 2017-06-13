@@ -40,151 +40,10 @@ body{
 	background: url('../img/back.png') no-repeat;
 }
 
-#titulo1{
-	position:absolute;
-	top: 150px;
-	left:125px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #fff;
-	font-size: 30;
-}
-#titulo2{
-	position:absolute;
-	top: 170px;
-	left:125px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #fff;
-	font-size: 110;
-}
-#titulo3{
-	position:absolute;
-	top: 280px;
-	left:125px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #fff;
-	font-size: 100;
-}
-#cabecera1{
-	position:absolute;
-	top: 420px;
-	left:485px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 27px;
-	text-align: center;
-}
-#cabecera2{
-	position:absolute;
-	top: 420px;
-	left:790px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 27px;
-	text-align: center;
-}
-#eizquierda1{
-	position:absolute;
-	top: 530px;
-	left:145px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #055e77;
-	font-size: 25px;
-	text-align: center;
-}
-
-#izquierda1{
-	position:absolute;
-	top: 555px;
-	left:145px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 40px;
-	text-align: center;
-}
-#eizquierda2{
-	position:absolute;
-	top: 620px;
-	left:145px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #055e77;
-	font-size: 25px;
-	text-align: center;
-}
-
-#izquierda2{
-	position:absolute;
-	top: 645px;
-	left:145px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 40px;
-	text-align: center;
-}
-
-
-#eizquierda3{
-	position:absolute;
-	top: 735px;
-	left:145px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #055e77;
-	font-size: 25px;
-	text-align: center;
-}
-
-#izquierda3{
-	position:absolute;
-	top: 760px;
-	left:145px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 40px;
-	text-align: center;
-}
-#eizquierda4{
-	position:absolute;
-	top: 825px;
-	left:145px;
-	font-family: DINROUNDWEBW01_REGULAR;
-	color: #055e77;
-	font-size: 25px;
-	text-align: center;
-}
-
-#izquierda4{
-	position:absolute;
-	top: 850px;
-	left:145px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #055e77;
-	font-size: 40px;
-	text-align: center;
-}
-
-#hoy1{
-	position:absolute;
-	top: 760px;
-	left:330px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #ed1e79;
-	font-size: 40px;
-	text-align: center;
-}
-
-#hoy2{
-	position:absolute;
-	top: 850px;
-	left:370px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #ed1e79;
-	font-size: 40px;
-	text-align: center;
-}
-
 #pet{
 	position:absolute;
-	top: 550px;
-	left:485px;
+	top: 677px;
+	left:395px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #055e77;
 	font-size: 30px;
@@ -194,8 +53,8 @@ body{
 
 #pee{
 	position:absolute;
-	top: 640px;
-	left:485px;
+	top: 770px;
+	left:395px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #055e77;
 	font-size: 30px;
@@ -204,8 +63,8 @@ body{
 }
 #peth{
 	position:absolute;
-	top: 760px;
-	left:485px;
+	top: 677px;
+	left:1295px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #055e77;
 	font-size: 30px;
@@ -215,8 +74,8 @@ body{
 
 #peeh{
 	position:absolute;
-	top: 855px;
-	left:485px;
+	top: 770px;
+	left:1295px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #055e77;
 	font-size: 30px;
@@ -226,76 +85,55 @@ body{
 
 #eet{
 	position:absolute;
-	top: 545px;
-	left:755px;
+	top: 665px;
+	left:685px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #fff;
-	font-size: 35px;
+	font-size: 40px;
 	text-align: center;
 	width: 250px;
 }
 
 #eee{
 	position:absolute;
-	top: 640px;
-	left:755px;
+	top: 758px;
+	left:685px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #fff;
-	font-size: 35px;
+	font-size: 40px;
 	text-align: center;
 	width: 250px;
 }
 #eeth{
 	position:absolute;
-	top: 755px;
-	left:755px;
+	top: 665px;
+	left:1575px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #fff;
-	font-size: 35px;
+	font-size: 40px;
 	text-align: center;
 	width: 250px;
 }
 
 #eeeh{
 	position:absolute;
-	top: 852px;
-	left:755px;
+	top: 758px;
+	left:1575px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #fff;
-	font-size: 35px;
+	font-size: 40px;
 	text-align: center;
 	width: 250px;
 }
 
-#yahemos{
-	position:absolute;
-	top: 700px;
-	left:1390px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #fff;
-	font-size: 30px;
-	text-align: center;
-	width: 500px;
-}
 #cantidad{
 	position:absolute;
-	top: 770px;
-	left:1390px;
+	top: 150px;
+	left:1430px;
 	font-family: DINROUNDWEBW01_BOLD;
 	color: #fff;
-	font-size: 100px;
+	font-size: 90px;
 	text-align: center;
 	width: 500px;
 }
-#arboles{
-	position:absolute;
-	top: 910px;
-	left:1390px;
-	font-family: DINROUNDWEBW01_BOLD;
-	color: #fff;
-	font-size: 50px;
-	text-align: center;
-	width: 500px;
-}
-
 
