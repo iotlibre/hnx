@@ -1,0 +1,71 @@
+<?php
+// Comportamiento.
+ini_set('error_reporting',E_ERROR);
+ini_set('display_errors','On');
+ini_set('date.timezone','Europe/Madrid');
+setlocale(LC_TIME,'es_ES.UTF-8');
+
+// Configuracion.
+require_once 'configuracion.php';
+
+// Auxiliar.
+require_once 'nucleo.php';
+
+// Parametros.
+$arbol__kg_co2=1/38; // 1 Arbol = 38 Kg CO​2.
+$kg_co2__kwh_termica_gas_natural=0.252; // Gas Natural: 0.252 Kg CO​2​/kWh.
+$kg_co2__kwh_termica=$kg_co2__kwh_termica_gas_natural;
+$kg_co2__kwh_electricidad_convencional_baleares=0.96; // Electricidad convencional Baleares: 0.96 Kg CO​2​/kWh.
+$kg_co2__kwh_electricidad=$kg_co2__kwh_electricidad_convencional_baleares;
+
+// Actualizamos el registro del dia.
+exec(__DIR__.'/'.'dia.php',$salida,$resultado);
+
+// Recuperamos los valores total y diario de la energia electrica y termica.
+
+$termica_energia_total_valor=valor_recuperar(REGISTRO_RAIZ.'energia/energia_termica.txt');
+
+$electrica_energia_total_valor=valor_recuperar(REGISTRO_RAIZ.'energia/energia_electrica.txt');
+
+$termica_energia_hoy_valor=valor_recuperar(REGISTRO_RAIZ.strftime('energia/%Y/%m/energia_termica_%Y-%m-%d.txt'));
+
+$electrica_energia_hoy_valor=valor_recuperar(REGISTRO_RAIZ.strftime('energia/%Y/%m/energia_electrica_%Y-%m-%d.txt'));
+
+$termica_energia_total_valor+=$termica_energia_hoy_valor;
+
+$electrica_energia_total_valor+=$electrica_energia_hoy_valor;
+
+// Calculamos datos derivados de las anteriores energias.
+
+$termica_co2_total_valor=$termica_energia_total_valor*$kg_co2__kwh_termica;
+
+$electrica_co2_total_valor=$electrica_energia_total_valor*$kg_co2__kwh_electricidad;
+
+$termica_co2_hoy_valor=$termica_energia_hoy_valor*$kg_co2__kwh_termica;
+
+$electrica_co2_hoy_valor=$electrica_energia_hoy_valor*$kg_co2__kwh_electricidad;
+
+$arboles_total_valor=($termica_co2_total_valor+$electrica_co2_total_valor)*$arbol__kg_co2;
+
+// Resumen registro datos.
+header('Access-Control-Allow-Origin: *');
+?>
+{
+	"termica_energia_total_valor":<?php echo valor_magnitud($termica_energia_total_valor,$termica_energia_total_unidades,'e'); ?>,
+	"termica_energia_total_unidades":"<?php echo $termica_energia_total_unidades; ?>",
+	"termica_co2_total_valor":<?php echo valor_magnitud($termica_co2_total_valor,$termica_co2_total_unidades,'co2'); ?>,
+	"termica_co2_total_unidades":"<?php echo $termica_co2_total_unidades; ?>",
+	"electrica_energia_total_valor":<?php echo valor_magnitud($electrica_energia_total_valor,$electrica_energia_total_unidades,'e'); ?>,
+	"electrica_energia_total_unidades":"<?php echo $electrica_energia_total_unidades; ?>",
+	"electrica_co2_total_valor":<?php echo valor_magnitud($electrica_co2_total_valor,$electrica_co2_total_unidades,'co2'); ?>,
+	"electrica_co2_total_unidades":"<?php echo $electrica_co2_total_unidades; ?>",
+	"arboles_total_valor":<?php echo valor_magnitud($arboles_total_valor); ?>,
+	"termica_energia_hoy_valor":<?php echo valor_magnitud($termica_energia_hoy_valor,$termica_energia_hoy_unidades,'e'); ?>,
+	"termica_energia_hoy_unidades":"<?php echo $termica_energia_hoy_unidades; ?>",
+	"termica_co2_hoy_valor":<?php echo valor_magnitud($termica_co2_hoy_valor,$termica_co2_hoy_unidades,'co2'); ?>,
+	"termica_co2_hoy_unidades":"<?php echo $termica_co2_hoy_unidades; ?>",
+	"electrica_energia_hoy_valor":<?php echo valor_magnitud($electrica_energia_hoy_valor,$electrica_energia_hoy_unidades,'e'); ?>,
+	"electrica_energia_hoy_unidades":"<?php echo $electrica_energia_hoy_unidades; ?>",
+	"electrica_co2_hoy_valor":<?php echo valor_magnitud($electrica_co2_hoy_valor,$electrica_co2_hoy_unidades,'co2'); ?>,
+	"electrica_co2_hoy_unidades":"<?php echo $electrica_co2_hoy_unidades; ?>"
+}
